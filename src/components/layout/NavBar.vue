@@ -3,8 +3,8 @@
     <div class="container">
       <img :src="logoSvg" class="Logo" />
       <nav>
-        <router-link to="/">Home</router-link> |
-        <router-link to="/post">Post</router-link>
+        <router-link class="link" to="/">Home</router-link>
+        <router-link class="link" to="/post">Post</router-link>
       </nav>
       <div></div>
       <button>Estrelas</button>
@@ -36,8 +36,13 @@ header .container {
 header .Logo {
   height: 28px;
   margin-left: 5px;
-  color: var(--vermelho);
-  font-family: "Arial Black", Times;
-  font-size: 40px;
+}
+
+.link {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 10px;
 }
 </style>

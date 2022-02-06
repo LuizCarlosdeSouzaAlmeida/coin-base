@@ -54,10 +54,10 @@ export default {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 2% 10%;
+  padding: 2% 10% 0%;
 }
 .cover-text {
-  width: 370px;
+  width: 360px;
 }
 #page {
   font-weight: 400;
@@ -66,7 +66,7 @@ export default {
 }
 #subtitle {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 27px;
 }
 .cover-text h1 {
@@ -84,8 +84,7 @@ export default {
   height: 400px;
 }
 .wave img {
-  width: 103%;
-  bottom: 0;
-  left: 0;
+  height: auto;
+  width: 100%;
 }
 </style>
