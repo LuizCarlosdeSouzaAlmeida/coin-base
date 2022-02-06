@@ -1,20 +1,16 @@
 <template>
   <div id="app">
-    <div v-for="n of news.news" :key="n.id">{{ n.category }}</div>
+    <Layout></Layout>
+    <news></news>
   </div>
 </template>
 
 <script>
+import Layout from "./components/layout";
+
 export default {
   name: "App",
-  computed: {
-    news() {
-      return this.$store.state.news;
-    },
-  },
-  mounted() {
-    this.$store.dispatch("getNews");
-  },
+  components: { Layout },
 };
 </script>
 

@@ -5,7 +5,7 @@ const REQUEST_URL = "https://mocki.io/v1/e7550604-190d-4d41-8097-4383cf9dfaca";
 export default createStore({
   state: {
     news: [],
-    selectedNew: {
+    selectedNews: {
       id: null,
       date: null,
       category: "teste",
