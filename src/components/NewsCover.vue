@@ -1,12 +1,12 @@
 <template>
   <div class="container">
-    <img :src="img_url" />
+    <img :src="img_url">
   </div>
 </template>
 
 <script>
 export default {
-  name: "Cover",
+  name: "NewsCover",
   props: {
     img: {
       type: String,

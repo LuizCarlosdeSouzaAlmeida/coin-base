@@ -1,18 +1,18 @@
 <template>
   <div>
     <div v-for="n of news" :key="n.id">
-      <Cover :img="n.url_image"></Cover>
+      <NewsCover :img="n.url_image"></NewsCover>
       {{ n }}
     </div>
   </div>
 </template>
 
 <script>
-import Cover from "./Cover.vue";
+import NewsCover from "./NewsCover.vue";
 
 export default {
   name: "News",
-  components: { Cover },
+  components: { NewsCover },
   computed: {
     news() {
       return this.$store.state.news.news;
