@@ -34,6 +34,7 @@ header .container {
 }
 
 header .Logo {
+  height: 28px;
   margin-left: 5px;
   color: var(--vermelho);
   font-family: "Arial Black", Times;
