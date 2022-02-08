@@ -20,3 +20,16 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.container {
+  background: white;
+  padding: 0% !important;
+  width: 100%;
+}
+img {
+  width: 100%;
+  height: 500px !important;
+  object-fit: cover;
+}
+</style>

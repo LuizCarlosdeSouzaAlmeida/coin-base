@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container home-cover">
     <div class="cover">
       <div class="cover-text">
         <p id="page">{{ page }}</p>
@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.container {
+.container .home-cover {
   color: #fff;
   background: linear-gradient(174.48deg, #fd749b -12.41%, #281ac8 88.56%);
   height: 600px;
@@ -85,6 +85,6 @@ export default {
 }
 .wave img {
   height: auto;
-  width: 100%;
+  width: 105%;
 }
 </style>

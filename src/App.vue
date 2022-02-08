@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <Layout></Layout>
-    <news></news>
   </div>
 </template>
 
@@ -22,6 +21,11 @@ export default {
     #fd749b -13.56%,
     #281ac8 158.3%
   );
+  --gradient-card: linear-gradient(
+    transparent 0%,
+    #fd749b99 75%,
+    #281ac899 100%
+  );
 }
 
 * {
@@ -33,5 +37,17 @@ export default {
   width: 100%;
   height: 100%;
   font-family: "Poppins", sans-serif;
+}
+
+button {
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 11px;
+  background: var(--gradient-button);
+  border-radius: 100px;
+  height: 40px;
+  width: 130px;
+  cursor: pointer;
 }
 </style>
