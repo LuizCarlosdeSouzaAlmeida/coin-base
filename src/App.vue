@@ -22,7 +22,7 @@ export default {
     #281ac8 158.3%
   );
   --gradient-card: linear-gradient(
-    transparent 0%,
+    white 0%,
     #fd749b99 75%,
     #281ac899 100%
   );
