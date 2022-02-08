@@ -89,12 +89,15 @@ export default {
   font-weight: 400;
 }
 .wave {
+  box-sizing: content-box;
+  width: 100%;
   position: absolute;
-  bottom: -50px;
+  bottom: -30px;
 }
 .wave img {
+  box-sizing: content-box;
   height: auto;
-  width: 105%;
+  width: 100%;
 }
 .news-text p {
   padding-bottom: 10%;

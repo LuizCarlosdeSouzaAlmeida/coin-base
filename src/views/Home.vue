@@ -84,7 +84,8 @@ export default {
   height: 400px;
 }
 .wave img {
+  box-sizing: content-box;
   height: auto;
-  width: 105%;
+  width: 100%;
 }
 </style>
