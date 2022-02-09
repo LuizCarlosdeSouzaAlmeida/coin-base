@@ -21,11 +21,7 @@ export default {
     #fd749b -13.56%,
     #281ac8 158.3%
   );
-  --gradient-card: linear-gradient(
-    white 0%,
-    #fd749b99 75%,
-    #281ac899 100%
-  );
+  --gradient-card: linear-gradient(white 0%, #fd749b99 75%, #281ac899 100%);
 }
 
 * {

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div v-for="n of news" :key="n.id" class="news">
+    <div v-for="n of newsPage" :key="n.id" class="news">
       <div class="news-card-border">
         <div class="news-card">
           <NewsCover :img="n.url_image"></NewsCover>
@@ -22,18 +22,40 @@
         </div>
       </div>
     </div>
+    <div class="pagination">
+      <Pagination
+        :records="records"
+        v-model="page"
+        :per-page="perPage"
+        @paginate="callback"
+        :options="options"
+      >
+      </Pagination>
+    </div>
   </div>
 </template>
 
 <script>
 import moment from "moment";
+import Pagination from "v-pagination-3";
+import PaginationTemplate from "./Pagination.vue";
 import NewsCover from "./NewsCover.vue";
 
 export default {
   name: "News",
-  components: { NewsCover },
-  created: function () {
-    this.moment = moment;
+  components: { NewsCover, Pagination },
+  data() {
+    return {
+      page: 1,
+      cont: 0,
+      perPage: 3,
+      options: {
+        chunk: 3,
+        chunksNavigation: "scroll",
+        template: PaginationTemplate,
+        format: false,
+      },
+    };
   },
   computed: {
     news() {
@@ -42,14 +64,35 @@ export default {
     selectedNews() {
       return this.$store.state.selectedNews;
     },
+    newsPage() {
+      if (this.news) {
+        return this.news.slice(
+          (this.page - 1) * this.perPage,
+          this.page * this.perPage
+        );
+      }
+      return this.news;
+    },
+    records() {
+      if (this.news) {
+        return this.news.length;
+      }
+      return 0;
+    },
   },
-  mounted() {
+  created() {
+    this.moment = moment;
     this.$store.dispatch("getNews");
   },
+  updated() {
+    console.log(this.cont++);
+  },
   methods: {
-    selectNews: function (e) {
-      console.log(e);
+    selectNews(e) {
       this.$store.dispatch("selectNews", e);
+    },
+    callback(page) {
+      this.page = page;
     },
   },
 };
@@ -104,6 +147,6 @@ export default {
   font-size: 11px;
 }
 .news-overview button {
-  font-size: 14px;
+  font-size: 15px;
 }
 </style>

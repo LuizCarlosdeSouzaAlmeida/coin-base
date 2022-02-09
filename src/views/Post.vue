@@ -20,7 +20,7 @@
       <p>
         {{ selectedNews.long_text }}
       </p>
-    <StarsRating></StarsRating>	
+      <StarsRating></StarsRating>
     </div>
   </div>
 </template>
@@ -51,6 +51,9 @@ export default {
     return {
       WaveSvg,
     };
+  },
+  mounted() {
+    window.scrollTo(0, 0);
   },
 };
 </script>
@@ -90,12 +93,14 @@ export default {
 }
 .wave {
   box-sizing: content-box;
-  width: 100%;
+  width: 110%;
   position: absolute;
-  bottom: -30px;
+  bottom: -90px;
 }
 .wave img {
   box-sizing: content-box;
+  position: absolute;
+  bottom: 0;
   height: auto;
   width: 100%;
 }
