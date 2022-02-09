@@ -17,6 +17,9 @@ export default createStore({
     SET_SELECTED_NEWS(state, news) {
       state.selectedNews = news;
     },
+    SET_STARS(state, stars) {
+      state.stars = stars;
+    },
   },
   actions: {
     getNews({ commit }) {
@@ -27,7 +30,9 @@ export default createStore({
     selectNews({ commit }, news) {
       commit("SET_SELECTED_NEWS", news);
     },
+    setStars({ commit }, stars) {
+      commit("SET_STARS", stars);
+    },
   },
-
   modules: {},
 });

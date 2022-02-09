@@ -10,9 +10,9 @@
           {{ selectedNews.category.toUpperCase() }}
         </p>
       </div>
-    </div>
-    <div class="wave">
-      <img :src="WaveSvg" />
+      <div class="wave">
+        <img :src="WaveSvg" />
+      </div>
     </div>
   </div>
   <div class="container">
@@ -74,8 +74,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2% 10% 0%;
-  background-size: 100% !important;
+  background-size: cover !important;
 }
 .cover-text {
   padding-bottom: 100px;
@@ -92,15 +91,12 @@ export default {
   font-weight: 400;
 }
 .wave {
-  box-sizing: content-box;
-  width: 110%;
+  box-sizing: border-box;
+  width: 100%;
   position: absolute;
-  bottom: -90px;
+  bottom: 0px;
 }
 .wave img {
-  box-sizing: content-box;
-  position: absolute;
-  bottom: 0;
   height: auto;
   width: 100%;
 }

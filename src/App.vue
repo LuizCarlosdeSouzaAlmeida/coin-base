@@ -33,6 +33,7 @@ export default {
   width: 100%;
   height: 100%;
   font-family: "Poppins", sans-serif;
+  color: #333333;
 }
 
 button {
@@ -42,7 +43,7 @@ button {
   font-size: 11px;
   background: var(--gradient-button);
   border-radius: 100px;
-  height: 40px;
+  height: 45px;
   width: 130px;
   cursor: pointer;
 }

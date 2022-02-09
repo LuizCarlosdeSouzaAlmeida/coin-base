@@ -5,9 +5,11 @@
         <div class="news-card">
           <NewsCover :img="n.url_image"></NewsCover>
           <div class="news-overview">
-            <h1>
-              {{ n.title }}
-            </h1>
+            <div class="news-title">
+              <h2>
+                {{ n.title }}
+              </h2>
+            </div>
             <p class="news-data">
               {{ moment(n.date).format("DD/MM/YYYY") }} |
               {{ n.category.toUpperCase() }}
@@ -125,17 +127,26 @@ export default {
   padding: 1px;
   margin: 5% 0%;
 }
-
-.news-overview h1 {
+.news-title h2 {
   background-image: var(--gradient-button);
-  background-size: 100%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
-  padding: 0%;
   padding: 10px;
+  font-family: Poppins;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 45px;
+  letter-spacing: 0px;
+  text-align: center;
+  text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
 }
 
 .news-overview p {
@@ -144,7 +155,7 @@ export default {
   padding-bottom: 20px;
 }
 .news-data {
-  font-size: 11px;
+  font-size: 10px;
 }
 .news-overview button {
   font-size: 15px;

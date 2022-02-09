@@ -7,7 +7,7 @@
         <p id="subtitle">{{ subtitle }}</p>
       </div>
       <div class="cover-img">
-        <img :src="ImgSvg" />
+        <img src="@/assets/IMG.png" />
       </div>
     </div>
     <div class="wave">
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import ImgSvg from "@/assets/IMG.svg";
+
 import WaveSvg from "@/assets/Wave.svg";
 import NewsFeed from "@/components/NewsFeed.vue";
 export default {
@@ -36,7 +36,6 @@ export default {
   },
   setup() {
     return {
-      ImgSvg,
       WaveSvg,
     };
   },
@@ -57,7 +56,7 @@ export default {
   padding: 2% 10% 0%;
 }
 .cover-text {
-  width: 360px;
+  width: 405px;
 }
 #page {
   font-weight: 400;

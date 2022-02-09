@@ -1,36 +1,35 @@
 <template>
   <div class="container">
     <span>Avalie essa notícia: </span>
-    <ul>
-      <li><img :src="starSvg" /></li>
-      <li><img :src="starSvg" /></li>
-      <li><img :src="starSvg" /></li>
-      <li><img :src="starOffSvg" /></li>
-      <li><img :src="starOffSvg" /></li>
-    </ul>
+    <div class="star-rating">
+      <StarRating
+        v-model:rating="stars"
+        :show-rating="showRating"
+        :star-size="starSize"
+      ></StarRating>
+    </div>
   </div>
 </template>
 
 <script>
-import starSvg from "@/assets/Star.svg";
-import starOffSvg from "@/assets/Star-off.svg";
+import StarRating from "vue-star-rating";
 export default {
   name: "StarsRating",
-  setup() {
-    return {
-      starSvg,
-      starOffSvg,
-    };
+  components: {
+    StarRating,
   },
   data() {
     return {
-      stars: Number,
+      stars: 3,
+      starSize: 25,
+      showRating: false,
     };
   },
-  methods: {
-    setStars(stars) {
-      this.stars = stars;
-    },
+  created() {
+    this.stars = this.$store.state.stars;
+  },
+  updated() {
+    this.$store.dispatch("setStars", this.stars);
   },
 };
 </script>
@@ -41,11 +40,7 @@ export default {
   flex-direction: row;
   font-weight: 700;
 }
-.container ul {
-  display: flex;
-  flex-direction: row;
-  align-items: left;
-  list-style: none;
+.star-rating {
   padding-left: 10px;
 }
 </style>

@@ -7,9 +7,13 @@
           :key="page"
           :class="props.pageClasses(page)"
           v-on="props.pageEvents(page)"
-          @click="props.activeClass(page)"
         >
-          <button type="button" v-bind="props.aProps" :class="props.theme.link">
+          <button
+            type="button"
+            v-bind="props.aProps"
+            :class="props.theme.link"
+            @click="this.setActiveClass(page)"
+          >
             {{ "0" + page }}
           </button>
         </li>
@@ -17,7 +21,9 @@
           <button type="button" v-bind="props.nextChunkProps">...</button>
         </li>
         <li :class="props.theme.next" @click="props.setNextPage">
-          <button type="button" class="next" v-bind="props.nextProps">Next</button>
+          <button type="button" class="next" v-bind="props.nextProps">
+            Next
+          </button>
         </li>
       </ul>
     </nav>
@@ -28,6 +34,16 @@
 export default {
   name: "MyPagination",
   props: ["props"],
+  methods: {
+    setActiveClass() {
+      var current = document.getElementsByClassName("active");
+
+      if (current.length > 0 && this.current[0] !== this) {
+        current[0].className = current[0].className.replace(" active", "");
+      }
+      this.className += " active";
+    },
+  },
 };
 </script>
 
@@ -45,14 +61,14 @@ ul {
 }
 button {
   background: white;
-  border: 1px solid #E0E0E0;
+  border: 1px solid #e0e0e0;
   color: #333333;
   width: 50px;
   height: 50px;
   font-weight: 400;
   font-size: 15px;
 }
-button:active {
+.active button {
   background: var(--gradient-button);
   color: white;
   border: 0px;

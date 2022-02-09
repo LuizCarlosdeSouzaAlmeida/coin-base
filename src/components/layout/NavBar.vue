@@ -10,7 +10,7 @@
       </nav>
       <div></div>
       <button class="star-button">
-        <p>{{ stars }} ESTRELAS</p>
+        <p>{{ "0" + stars }} ESTRELAS</p>
         <img :src="starSvg" class="star-icon" />
       </button>
     </div>
@@ -42,7 +42,7 @@ header .container {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 2.5rem;
+  padding: 2rem 3rem;
 }
 
 header .Logo {
@@ -56,7 +56,7 @@ header .Logo {
   font-weight: 700;
   text-decoration: none;
   position: relative;
-  margin: 10px;
+  margin: 40px;
 }
 .router-link-exact-active:after {
   position: absolute;
@@ -72,8 +72,8 @@ header .Logo {
   border-radius: 2px;
 }
 .star-icon {
-  height: 20px;
-  width: 20px;
+  height: 17px;
+  width: 17px;
   margin-left: 5px;
 }
 .star-button {
