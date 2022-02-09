@@ -33,4 +33,9 @@ img {
   height: 100%;
   object-fit: cover;
 }
+@media screen and (max-width: 768px) {
+  .container {
+    height: auto !important;
+  }
+}
 </style>

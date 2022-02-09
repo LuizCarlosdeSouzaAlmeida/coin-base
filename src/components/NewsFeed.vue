@@ -160,4 +160,12 @@ export default {
 .news-overview button {
   font-size: 15px;
 }
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0% 5%;
+  }
+  .news-overview button {
+    font-size: 12px;
+  }
+}
 </style>

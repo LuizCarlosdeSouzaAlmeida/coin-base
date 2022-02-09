@@ -1,6 +1,6 @@
 <template>
-  <div class="container post-cover">
-    <div class="cover" :style="coverImg">
+  <div class="container post-cover" :style="coverImg">
+    <div class="cover">
       <div class="cover-text">
         <h1 class="news-title">
           {{ selectedNews.title }}
@@ -10,9 +10,9 @@
           {{ selectedNews.category.toUpperCase() }}
         </p>
       </div>
-      <div class="wave">
-        <img :src="WaveSvg" />
-      </div>
+    </div>
+    <div class="wave">
+      <img :src="WaveSvg" />
     </div>
   </div>
   <div class="container">
@@ -59,25 +59,20 @@ export default {
 </script>
 
 <style scoped>
-.container .cover {
+.container .post-cover {
   color: #fff;
-  height: 600px;
-}
-.container .news-text {
-  font-size: 16px;
-  line-height: 28px;
-  font-weight: 400;
-  padding: 10% 20%;
+  height: auto;
+  overflow: hidden;
+  background-size: cover !important;
 }
 .cover {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-size: cover !important;
 }
 .cover-text {
-  padding-bottom: 100px;
+  padding: 150px 0px;
 }
 .cover-text h1 {
   text-align: center;
@@ -91,16 +86,39 @@ export default {
   font-weight: 400;
 }
 .wave {
-  box-sizing: border-box;
-  width: 100%;
-  position: absolute;
-  bottom: 0px;
+  position: relative;
+  bottom: -45px;
 }
 .wave img {
-  height: auto;
-  width: 100%;
+  box-sizing: content-box;
+  object-fit: fill;
+  width: 105%;
+}
+.container .news-text {
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  padding: 10% 20%;
 }
 .news-text p {
   padding-bottom: 10%;
+}
+@media screen and (max-width: 768px) {
+  .container .news-text {
+    padding: 10% 5%;
+  }
+  .container .cover {
+    height: auto;
+  }
+  .cover-text {
+    padding: 100px 0px;
+  }
+  .cover-text h1 {
+    width: 100%;
+    font-size: 28px;
+  }
+  .cover-text p {
+    font-size: 12px;
+  }
 }
 </style>

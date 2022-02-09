@@ -18,7 +18,6 @@
 </template>
 
 <script>
-
 import WaveSvg from "@/assets/Wave.svg";
 import NewsFeed from "@/components/NewsFeed.vue";
 export default {
@@ -46,7 +45,8 @@ export default {
 .container .home-cover {
   color: #fff;
   background: linear-gradient(174.48deg, #fd749b -12.41%, #281ac8 88.56%);
-  height: 600px;
+  height: auto;
+  overflow: hidden;
 }
 .cover {
   display: flex;
@@ -81,10 +81,42 @@ export default {
 }
 .cover-img img {
   height: 400px;
+  object-fit: fill;
+}
+.wave {
+  position: relative;
+  bottom: -45px;
 }
 .wave img {
   box-sizing: content-box;
-  height: auto;
-  width: 100%;
+  object-fit: fill;
+  width: 105%;
+}
+@media screen and (max-width: 768px) {
+  .container .home-cover {
+    height: auto;
+  }
+  .cover {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+  }
+  .cover-text {
+    width: 100%;
+  }
+  .cover-img {
+    display: none;
+  }
+  .cover-text h1 {
+    font-size: 32px;
+  }
+  .cover-text p {
+    font-size: 12px;
+  }
+  .wave {
+    position: relative;
+    bottom: -24px;
+  }
 }
 </style>
